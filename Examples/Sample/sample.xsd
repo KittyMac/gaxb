@@ -4,6 +4,48 @@
 	xmlns:foo="http://schema.smallplanet.com/Foo"
 	xmlns:bar="http://schema.smallplanet.com/Bar"
     targetNamespace="http://schema.smallplanet.com/Logistics">
+
+	<simpleType name="PackageTypeENUM">
+		<annotation>
+			<appinfo>ENUM</appinfo>
+		</annotation>
+        <restriction base="string">
+			<enumeration value = "PACKAGE_TINY"/>
+			<enumeration value = "PACKAGE_SMALL"/>
+			<enumeration value = "PACKAGE_MEDIUM"/>
+			<enumeration value = "PACKAGE_LARGE"/>
+			<enumeration value = "PACKAGE_HUGE"/>
+			<enumeration value = "PACKAGE_MAMMOTH"/>
+		</restriction>
+    </simpleType>
+
+	<simpleType name="PackageTypeNamedEnum">
+		<annotation>
+			<appinfo>NAMED_ENUM</appinfo>
+		</annotation>
+        <restriction base="string">
+			<enumeration value = "PACKAGE_TINY"/>
+			<enumeration value = "PACKAGE_SMALL"/>
+			<enumeration value = "PACKAGE_MEDIUM"/>
+			<enumeration value = "PACKAGE_LARGE"/>
+			<enumeration value = "PACKAGE_HUGE"/>
+			<enumeration value = "PACKAGE_MAMMOTH"/>
+		</restriction>
+    </simpleType>
+
+	<simpleType name="PackageTypeENUMMask">
+		<annotation>
+			<appinfo>ENUM_MASK</appinfo>
+		</annotation>
+        <restriction base="string">
+			<enumeration value = "PACKAGE_TINY"/>
+			<enumeration value = "PACKAGE_SMALL"/>
+			<enumeration value = "PACKAGE_MEDIUM"/>
+			<enumeration value = "PACKAGE_LARGE"/>
+			<enumeration value = "PACKAGE_HUGE"/>
+			<enumeration value = "PACKAGE_MAMMOTH"/>
+		</restriction>
+    </simpleType>
 	
 	<simpleType name="PackageSize">
 		<annotation>
@@ -25,7 +67,7 @@
 			<element name="ElementA" type="string" minOccurs="0" maxOccurs="1"/>
 			<element name="ElementB" type="string" minOccurs="0" maxOccurs="unbounded"/>
 		</sequence>
-		<attribute name="title" type="string" use="required" />
+		<attribute name="title" type="string" default="Hello World" />
 		<attribute name="a" type="boolean" use="required" />
 		<attribute name="b" type="short" use="required" />
 		<attribute name="c" type="int" use="required" />
