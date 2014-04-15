@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Container xmlns="http://schema.smallplanet.com/Logistics">
+	<Package title="Package 1" a="true" b="5"/>
+	<Package title="Package 2" size="PACKAGE_MEDIUM" >
+		<ElementA>This is an element</ElementA>
+	</Package>
+	<Package title="Package 3" size="PACKAGE_HUGE" >
+		<ElementB>This is an element 1</ElementB>
+		<ElementB>This is an element 2</ElementB>
+		<ElementB>This is an element 3</ElementB>
+	</Package>
+</Container>
