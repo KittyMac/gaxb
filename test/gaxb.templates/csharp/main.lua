@@ -140,7 +140,7 @@ function superclassForItem(v)
 	if(v.extension ~= nil) then
 		return className(v.extension)
 	end
-	return "NSObject"
+	return "I"..capitalizedString(v.namespace);
 end
 
 function hasSuperclass(v)
@@ -223,7 +223,7 @@ function typeForItem(v)
 		end
 		
 		if(t.ref ~= nil) then
-			return classNameFromRef(t.ref).." *";
+			return classNameFromRef(t.ref);
 		end
 		
 		if(t.type == "element") then
@@ -256,7 +256,7 @@ function typeForItem(v)
 				appinfo = appinfo[1].content;
 				local type = TYPEMAP[appinfo];
 				if(type == nil) then
-					return appinfo.." *";
+					return appinfo;
 				else
 					return type;
 				end

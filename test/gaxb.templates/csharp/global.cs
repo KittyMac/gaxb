@@ -104,9 +104,11 @@ end
 					{
 						Type entityClass = Type.GetType (xmlNamespace + "_" + reader.Name, true);
 
-						I<%=CAP_NAME%> entityObject = (I<%=CAP_NAME%>)(Activator.CreateInstance (entityClass));
-						entityObject.gaxb_load(reader, rootEntity);
+						object entityObject = (Activator.CreateInstance (entityClass));						
 
+						MethodInfo method = entityClass.GetMethod ("gaxb_load");
+						method.Invoke (entityObject, new[] { reader, rootEntity });
+						
 						if (reader.IsEmptyElement == false) {
 							rootEntity = entityObject;
 						}
